@@ -1,0 +1,17 @@
+.outer{
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.inner{
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    background-color: cyan;
+}

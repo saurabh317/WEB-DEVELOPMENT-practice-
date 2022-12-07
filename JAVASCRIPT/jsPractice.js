@@ -1,3 +1,5 @@
+"use strict";
+
 //  var a = 10;
 //  console.log(a);
 //   a = " 'Coding Ninjas' ";
@@ -342,6 +344,7 @@
 // some of the keyboard events ******************************
 //    var box = document.getElementById("input-box");
 //    box.addEventListener("keypress", function(){
+    // "use strict";
 //     console.log("key pressed");
 //    });
 //    box.addEventListener("keydown", function(event){
@@ -351,6 +354,17 @@
 //     console.log("key up");
 //    });
 
+// event propagation *********************************************
+// when we have the dom hierarchy then this works 
+// var outerdiv = document.querySelector(".outer");
+// var innerdiv = document.querySelector(".inner");
+// innerdiv.addEventListener("click",function(event){
+//     console.log("u just clicked the inner div");
+//     event.stopPropagation();
+// });
+// outerdiv.addEventListener("click",function(){
+//     console.log("u just clicked the outer div");
+// });
 
  
 
