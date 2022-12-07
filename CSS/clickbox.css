@@ -1,0 +1,10 @@
+.container{
+    margin:auto;
+    height:10rem;
+    width:10rem;
+    background-color:red; 
+}
+
+.text-container{
+    text-align:center;
+}

@@ -321,10 +321,21 @@
 // setTimeout(add(2,6,8,9) , 10);
 
 // starting DOM**************************************************
-var elems = document.getElementById('head');
-elems.style.backgroundColor = "red";
-var elem2 = document.querySelector(".parar");
-elem2.innerHTML = "i am changed para";
+// var elems = document.getElementById('head');
+// elems.style.backgroundColor = "red";
+// var elem2 = document.querySelector(".para");
+// elem2[0].innerText = "i am changed para";
+// elem2[1].style.color = "green";
+
+// starting with even listener************************************
+//  var target_button = document.querySelector('.btn');
+//  target_button.style.height = "50px";
+//  target_button.style.width = "100px";
+//  target_button.addEventListener('click',function(){
+//     alert("i am very happy");
+//  });
+
+
  
 
 
