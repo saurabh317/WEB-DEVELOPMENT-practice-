@@ -328,12 +328,28 @@
 // elem2[1].style.color = "green";
 
 // starting with even listener************************************
+// some of the mouse events************************************
 //  var target_button = document.querySelector('.btn');
 //  target_button.style.height = "50px";
 //  target_button.style.width = "100px";
 //  target_button.addEventListener('click',function(){
 //     alert("i am very happy");
 //  });
+//  target_button.addEventListener('dblclick',function(){
+//     document.write("hey y u have clicked 2 times");
+//  });
+
+// some of the keyboard events ******************************
+//    var box = document.getElementById("input-box");
+//    box.addEventListener("keypress", function(){
+//     console.log("key pressed");
+//    });
+//    box.addEventListener("keydown", function(event){
+//     console.log("key down", event.key);
+//    });
+//    box.addEventListener("keyup", function(){
+//     console.log("key up");
+//    });
 
 
  
