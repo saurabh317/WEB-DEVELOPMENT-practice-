@@ -192,13 +192,141 @@
 
 // rotateLeft([1,2,3,4]) // returns [2,3,4,1]
 
-function rotateLeft(arr){
-  var ele = arr.shift();
-  arr.push(ele);
-  return arr;
-}
-var x = rotateLeft([1,2,3,4]);
-console.log(x);
+// function rotateLeft(arr){
+//   var ele = arr.shift();
+//   arr.push(ele);
+//   return arr;
+// }
+// var x = rotateLeft([1,2,3,4]);
+// console.log(x);
+
+// objects in js ******************************************
+
+// var student = {
+//   name : "sagar",
+//   roll_no : 24,
+//   sem : 6
+// };
+// console.log(student.name);
+// // adding properties to the object 
+// student.auid = "R1920732";
+// console.log(student.auid);
+// // console.log(typeof student);
+
+// iterating in the objects in the js****************
+
+// var student = {
+//   name : "sagar",
+//   roll_no : 24,
+//   sem : 6
+// };
+// //  way 1
+// //  var x = Object.keys(student);
+// //  console.log(x);
+
+// //  way 2(using for in loop)
+// for(var prop in  student)
+// {
+//   console.log(prop, student[prop]);
+// }
+
+// nested objects*****************
+
+// var student = {
+//     name : "sagar",
+//     roll_no : 24,
+//     sem : 6,
+//     address : {
+//       city : "patna",
+//       pincode : 802214
+//     },
+//     print : function(){
+//       console.log("we belong to same city");
+//     }
+//   };
+
+//   console.log(student.address.city);
+//   // we can also put function as the key vALUE within the object*****************
+//  console.log(student.print())
+
+// 1. Create a student object with three properties: name, age, and roll no.
+// 2. Create an object address with two properties, City and state and add this object property to the student object.
+// 3. Now delete the roll no property and print the object before and after deleting the property.
+
+// var student = {
+//   name : "sagar",
+//   age : 23,
+//   roll_no : 32,
+//   address : {
+//   city : "bangalore",
+//   state : "karnataka"
+// }
+// };
+// for( var prop in student){
+//    console.log(prop ,  student[prop]);
+// };
+// delete student.roll_no;
+// for( var prop in student){
+//    console.log(prop ,  student[prop]);
+// };
+
+// note ----*******  arrays are actually objects in javascript 
+
+// itrating over arrays using for in loop *******
+
+// var arr = [1,2,3,4,5];
+// for( var i in arr){
+//   console.log(i, arr[i]);
+// }
+
+// timming events in java script*******************************
+// setTimeout();
+// setInterval();
+// clearInterval();
+
+// create a countdown that starts with 10 and ends at 1 sec ****************
+// let count = 10;
+// function timer(){
+//   console.log(count);
+//   count --;
+//   if(count == 0){
+// console.log("time up!");  
+//     clearInterval(id);
+//   }
+// }
+// let id = setInterval(timer , 1000);
+
+// copying one object to another so that it doesn't have affect on the first obj  ***************************
+// var sagar = {
+//   name : "sagar",
+//   class : 10
+// };
+// var virat = Object.assign({}, sagar);
+// virat.name  = "virat";
+// console.log(virat);
+// console.log(sagar);
+//  or 
+// var sagar = {
+//     name : "sagar",
+//      class : 10
+//   };
+//   var virat = {...sagar};
+//   virat.name = "virat";
+//   console.log(virat);
+//   console.log(sagar);
+
+// function add(a,b,c,d) {
+//   console.log(a+b+c+d)
+// }
+// setTimeout(add(2,6,8,9) , 10);
+
+// starting DOM**************************************************
+var elems = document.getElementById('head');
+elems.style.backgroundColor = "red";
+var elem2 = document.querySelector(".parar");
+elem2.innerHTML = "i am changed para";
+ 
+
 
 
 
