@@ -94,7 +94,7 @@
 //  sum(7,9);
 
 // function hoisting doesn't work in the case of the function expression****************************
-// hoist(); 
+// hoist();
 // var hoist = function () {
 //     console.log('bar');
 // };
@@ -105,8 +105,6 @@
 //   console.log(c);
 //  }
 // sum(3,7);
-
-
 
 // Write a function 'returnDay' that takes one parameter(number from 1 to 7) and returns the day of the week(using array concept)**************
 
@@ -136,7 +134,7 @@
 //       break;
 //      default:
 //       console.log("enjoy madi")
-    
+
 //   }
 // }
 // returnDay(4);
@@ -163,9 +161,6 @@
 //     }
 // });
 
-
-
-
 // using function of the array **************
 // array = [ 60, 70, 20, 10, 40, 90 ];
 
@@ -174,11 +169,11 @@
 // }
 
 // if(!array.every(test)) {
-//     console.log("statement 1"); 
+//     console.log("statement 1");
 // }
 
 // else {
-//     console.log("statement 2"); 
+//     console.log("statement 2");
 // }
 
 // Implement a function “duplicate” to duplicate an array, as shown below:
@@ -210,7 +205,7 @@
 //   sem : 6
 // };
 // console.log(student.name);
-// // adding properties to the object 
+// // adding properties to the object
 // student.auid = "R1920732";
 // console.log(student.auid);
 // // console.log(typeof student);
@@ -272,7 +267,7 @@
 //    console.log(prop ,  student[prop]);
 // };
 
-// note ----*******  arrays are actually objects in javascript 
+// note ----*******  arrays are actually objects in javascript
 
 // itrating over arrays using for in loop *******
 
@@ -292,7 +287,7 @@
 //   console.log(count);
 //   count --;
 //   if(count == 0){
-// console.log("time up!");  
+// console.log("time up!");
 //     clearInterval(id);
 //   }
 // }
@@ -307,7 +302,7 @@
 // virat.name  = "virat";
 // console.log(virat);
 // console.log(sagar);
-//  or 
+//  or
 // var sagar = {
 //     name : "sagar",
 //      class : 10
@@ -329,7 +324,7 @@
 // elem2[0].innerText = "i am changed para";
 // elem2[1].style.color = "green";
 
-// starting with even listener************************************
+// starting with event listener************************************
 // some of the mouse events************************************
 //  var target_button = document.querySelector('.btn');
 //  target_button.style.height = "50px";
@@ -344,7 +339,7 @@
 // some of the keyboard events ******************************
 //    var box = document.getElementById("input-box");
 //    box.addEventListener("keypress", function(){
-    // "use strict";
+// "use strict";
 //     console.log("key pressed");
 //    });
 //    box.addEventListener("keydown", function(event){
@@ -355,20 +350,31 @@
 //    });
 
 // event propagation *********************************************
-// when we have the dom hierarchy then this works 
+// when we have the dom hierarchy then this works
 // var outerdiv = document.querySelector(".outer");
 // var innerdiv = document.querySelector(".inner");
 // innerdiv.addEventListener("click",function(event){
-//     console.log("u just clicked the inner div");
+//     alert("u just clicked the inner div");
 //     event.stopPropagation();
 // });
 // outerdiv.addEventListener("click",function(){
-//     console.log("u just clicked the outer div");
+//     alert"u just clicked the outer div");
 // });
 
- 
+/*closures in js enbles us the access to use the varible outside the scope even if the execution of the outer context is done 
+ i.e the variable doesn't get destroyed after the exection of the outer context , it get stored for the inner context use */
 
-
-
-
-
+// var i = 0;
+// function outer() {
+//   var j = 20;
+//   console.log("outer " + j);
+//   function inner() {
+//     var k = 10;
+//     console.log("inner " + j, k);
+//     j++;
+//     k++;
+//   }
+//   inner();
+// }
+// outer();
+// outer();
