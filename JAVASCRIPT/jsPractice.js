@@ -378,3 +378,87 @@
 // }
 // outer();
 // outer();
+
+
+// console.log((function(x,f=()=>x){
+//     x = 2;
+//     var x;
+//     var y = x;
+//     console.log(y);
+//     console.log(x);
+//     return [x,y,f()];
+// }) (1));
+
+// let user = {
+//    firstname: 'John',
+//    lastname: 'Doe',
+//    getFullName: function(){
+//        return function(){
+//            console.log(`The full name of the user is ${this.firstname} ${this.lastname} `);
+//        }
+//    }    
+// }
+// user.getFullName()();
+
+/*In the given example, the function which is getting returned i.e.
+  
+    return function(){
+
+           console.log(`The full name of the user is ${this.firstname} ${this.lastname} `);
+     }
+
+ Is a unbounded function (An unbound function is a function that is not bound to an object) So this in the above function refers to the global (window) object. Since unbound functions are implicitly bound to the global scope). And since no firstname and lastname variables were defined in the window environment,  ${this.firstname} ${this.lastname}  prints undefined undefined */
+
+//  if in place of the niormal function if the arrw function was there then it would have printed as expected
+
+
+// function makeArmy() {
+//     let shooters = [];
+//     let i = 0;
+//     while (i < 10) {
+//       let shooter = function() {
+//         console.log( i ); 
+//       };
+//     i++;
+//       shooters.push(shooter);   
+//     }
+//     return shooters;
+//   }
+//   let army = makeArmy();
+//   army[0]();
+//   army[5]();
+
+
+
+// function makeArmy() {
+//     let shooters = [];
+//     for( let i = 0; i < 10; i++) {
+//       let shooter = function() {
+//         console.log("hi");
+//         console.log( i );
+//       };
+//       shooters.push(shooter);
+//     }
+//     return shooters;    
+//   }
+//   let army = makeArmy();
+//   army[0]();
+//   army[5]();
+
+
+// var argument = [1, 2, 3];
+// var arr = () => argument[2];
+// arr();
+// function foo(n) {
+//   var f = () => argument[0] + n; 
+//   return f();
+// }
+// foo(3);   
+
+var i = 0;
+function increment(){
+  console.log(i);
+  i++;
+}
+increment();
+increment();
