@@ -460,27 +460,27 @@
 
 // getting stated with the higher order function***************************************
 // we will see the behaviour of the parameters whenn they are passed *****
-const flight = "LH1234";
-const sagar = {
-  name: "saurabh",
-  age: 22,
-  city: "bangalore",
-  passport: 12344567,
-};
-function checkIn(flightNo, passenger) {
-  flightNo = 'Lh345';
-  passenger.name = "golu";
-  console.log(passenger.name);
-  console.log(passenger.passport);
-  if (passenger.passport === 12344567) {
-    alert(`checked in`);
-  } else {
-    alert(`wrong passport info!`);
-  }
-}
-checkIn(flight, sagar);
-console.log(flight);
-console.log(sagar);
+// const flight = "LH1234";
+// const sagar = {
+//   name: "saurabh",
+//   age: 22,
+//   city: "bangalore",
+//   passport: 12344567,
+// };
+// function checkIn(flightNo, passenger) {
+//   flightNo = 'Lh345';
+//   passenger.name = "golu";
+//   console.log(passenger.name);
+//   console.log(passenger.passport);
+//   if (passenger.passport === 12344567) {
+//     alert(`checked in`);
+//   } else {
+//     alert(`wrong passport info!`);
+//   }
+// }
+// checkIn(flight, sagar);
+// console.log(flight);
+// console.log(sagar);
 
 // function manipulate(passenger){
 //   passenger.passport = 10000000;
@@ -490,3 +490,19 @@ console.log(sagar);
 
 // here in objects if we try to chnage values using parametres then those changes will automatically
 // reflect to the actual values of the objects becoz both the values are pointing towards the reference of the same locataion so changes done will directly affect the changes at the actaul location.but this is not the case with the variables becoz they are stored in the heap memory..
+
+// default parameters in function***
+const detailArray = [];
+
+
+const booking = function(flight,passengers,price){
+  const details ={
+    flight,passengers,price
+  }
+  console.log(details);
+  detailArray.push(details);
+}
+ booking('LH200', undefined,500);
+ console.log(detailArray);
+
+
