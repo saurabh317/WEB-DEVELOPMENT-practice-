@@ -379,7 +379,6 @@
 // outer();
 // outer();
 
-
 // console.log((function(x,f=()=>x){
 //     x = 2;
 //     var x;
@@ -396,7 +395,7 @@
 //        return function(){
 //            console.log(`The full name of the user is ${this.firstname} ${this.lastname} `);
 //        }
-//    }    
+//    }
 // }
 // user.getFullName()();
 
@@ -411,24 +410,21 @@
 
 //  if in place of the niormal function if the arrw function was there then it would have printed as expected
 
-
 // function makeArmy() {
 //     let shooters = [];
 //     let i = 0;
 //     while (i < 10) {
 //       let shooter = function() {
-//         console.log( i ); 
+//         console.log( i );
 //       };
 //     i++;
-//       shooters.push(shooter);   
+//       shooters.push(shooter);
 //     }
 //     return shooters;
 //   }
 //   let army = makeArmy();
 //   army[0]();
 //   army[5]();
-
-
 
 // function makeArmy() {
 //     let shooters = [];
@@ -439,26 +435,58 @@
 //       };
 //       shooters.push(shooter);
 //     }
-//     return shooters;    
+//     return shooters;
 //   }
 //   let army = makeArmy();
 //   army[0]();
 //   army[5]();
 
-
 // var argument = [1, 2, 3];
 // var arr = () => argument[2];
 // arr();
 // function foo(n) {
-//   var f = () => argument[0] + n; 
+//   var f = () => argument[0] + n;
 //   return f();
 // }
-// foo(3);   
+// foo(3);
 
-var i = 0;
-function increment(){
-  console.log(i);
-  i++;
+// var i = 0;
+// function increment(){
+//   console.log(i);
+//   i++;
+// }
+// increment();
+// increment();
+
+// getting stated with the higher order function***************************************
+// we will see the behaviour of the parameters whenn they are passed *****
+const flight = "LH1234";
+const sagar = {
+  name: "saurabh",
+  age: 22,
+  city: "bangalore",
+  passport: 12344567,
+};
+function checkIn(flightNo, passenger) {
+  flightNo = 'Lh345';
+  passenger.name = "golu";
+  console.log(passenger.name);
+  console.log(passenger.passport);
+  if (passenger.passport === 12344567) {
+    alert(`checked in`);
+  } else {
+    alert(`wrong passport info!`);
+  }
 }
-increment();
-increment();
+checkIn(flight, sagar);
+console.log(flight);
+console.log(sagar);
+
+// function manipulate(passenger){
+//   passenger.passport = 10000000;
+// }
+// manipulate(sagar);
+// console.log(sagar);
+
+// here in objects if we try to chnage values using parametres then those changes will automatically
+// reflect to the actual values of the objects becoz both the values are pointing towards the reference of the same locataion so changes done will directly affect the changes at the actaul location.but this is not the case with the variables becoz they are stored in the heap memory..
