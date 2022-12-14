@@ -492,17 +492,59 @@
 // reflect to the actual values of the objects becoz both the values are pointing towards the reference of the same locataion so changes done will directly affect the changes at the actaul location.but this is not the case with the variables becoz they are stored in the heap memory..
 
 // default parameters in function***
-const detailArray = [];
+// const detailArray = [];
 
 
-const booking = function(flight,passengers,price){
-  const details ={
-    flight,passengers,price
+// const booking = function(flight,passengers = 1,price){
+//   const details ={
+//     flight,passengers,price
+//   }
+//   console.log(details);
+//   detailArray.push(details);
+// }
+//  booking('LH200', undefined,500);
+//  console.log(detailArray);
+
+// function which return function or takes functions as the  arguments are known as the HigherOrder function*****************
+// function1
+// const uppercase = function(str){
+
+//   console.log(str.toUpperCase());
+// }
+//  function 2
+// const lowercase = function(str){
+//   console.log(str.toLowerCase());
+// }
+
+// higher order function********
+
+// const converter = function(str ,fun){
+
+//   console.log(`the name of the function is ${fun.name}`);
+//   console.log(`transformed string is ${fun(str)}`);
+//   console.log(`original string is ${str}`);
+
+// }
+// converter("aman",uppercase);
+
+// function returning a function *******
+// const greet = function(greeting){
+//   return function(name){
+//     console.log(`${greeting} ${name}`);
+//   }
+// }
+ 
+// const store = greet('hey');
+// store('sagar');
+
+// using arrow function******
+
+const greet = function(greeting){
+    return (name)=>{
+      console.log(`${greeting} ${name}`);
+    }
   }
-  console.log(details);
-  detailArray.push(details);
-}
- booking('LH200', undefined,500);
- console.log(detailArray);
+  const store = greet('hey');
+store('sagar');
 
 
