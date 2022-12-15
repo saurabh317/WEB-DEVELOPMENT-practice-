@@ -494,7 +494,6 @@
 // default parameters in function***
 // const detailArray = [];
 
-
 // const booking = function(flight,passengers = 1,price){
 //   const details ={
 //     flight,passengers,price
@@ -533,18 +532,48 @@
 //     console.log(`${greeting} ${name}`);
 //   }
 // }
- 
+
 // const store = greet('hey');
 // store('sagar');
 
 // using arrow function******
 
-const greet = function(greeting){
-    return (name)=>{
-      console.log(`${greeting} ${name}`);
-    }
-  }
-  const store = greet('hey');
-store('sagar');
+// const greet = function(greeting){
+//     return (name)=>{
+//       console.log(`${greeting} ${name}`);
+//     }
+//   }
+//   const store = greet('hey');
+// store('sagar');
 
+// call apply and bind methods *******************************
+// let details = {
+//   name: "sagar",
+//   age: 22,
+//   designation: "student",
+//   // print: function(){
+//   //   console.log(this.name);
+//   // }
+// };
+// let fun = function (state,country) {
+//   console.log(this.name + " "+country+" "+state);
+// };
+// fun.call(details);
 
+// let details2 = {
+//   name: "saurabh",
+//   age: 23,
+//   designation: "student",
+// };
+// // call :suppose if we want to call a function that is not present in our object but we gonna point to our object
+// // details.print.call(details2);
+// // fun.call(details2,"india");
+
+// // apply :- it is similar to the call method the only difference is that we can pass the parameters putting them in a array list
+// fun.apply(details2,["karnataka","india"]);
+
+// // bind:- it allows the user to store the function call as a  value in  a variable and return when called that variable 
+
+// let store = fun.bind(details2,"karnataka","india"); 
+// console.log(store);
+// store();
