@@ -139,6 +139,9 @@
 // }
 // returnDay(4);
 
+// *************************ARRAYS***************************
+// **********************************************************
+
 // itrate in the array using forEach loop***************
 
 // let arr = [1,2,3,4,5,6];
@@ -161,20 +164,38 @@
 //     }
 // });
 
-// using function of the array **************
-// array = [ 60, 70, 20, 10, 40, 90 ];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// let print = function(item,no){
+//   if(item > 0){
+//     console.log(no+1+" "+"ammount credited"+ " "+Math.abs(item));
+//   }else{
+//     console.log(no+1+" "+"amount withdrawl" +" "+Math.abs(item));
+//   }
+// }
+// movements.forEach(print);
 
+// **************ARRAY FUNCTIONS*****************
+
+// 1.EVERY--------------
+// array = [ 60, 70, 20, 10, 40, 90 ];
 // const test = function(x) {
 //     return x > 5;
 // }
-
 // if(!array.every(test)) {
 //     console.log("statement 1");
 // }
-
 // else {
 //     console.log("statement 2");
 // }
+
+// 2.MAP----------------
+// let array = [ 60, 70, 20, 10, 40, 90 ];
+// const store = array.map((item)=>{
+//   return item * 10;
+// })
+// console.log(store);
+// console.log(array);
+
 
 // Implement a function “duplicate” to duplicate an array, as shown below:
 
@@ -197,7 +218,10 @@
 // var x = rotateLeft([1,2,3,4]);
 // console.log(x);
 
-// objects in js ******************************************
+// *************************OBJECTS***************************
+// ***********************************************************
+
+// objects in js ****************************
 
 // var student = {
 //   name : "sagar",
@@ -210,7 +234,7 @@
 // console.log(student.auid);
 // // console.log(typeof student);
 
-// iterating in the objects in the js****************
+// iterating in the objects in the js*******
 
 // var student = {
 //   name : "sagar",
@@ -227,7 +251,7 @@
 //   console.log(prop, student[prop]);
 // }
 
-// nested objects*****************
+// nested objects***************************
 
 // var student = {
 //     name : "sagar",
@@ -243,7 +267,7 @@
 //   };
 
 //   console.log(student.address.city);
-//   // we can also put function as the key vALUE within the object*****************
+//   // we can also put function as the key VALUE within the object*****************
 //  console.log(student.print())
 
 // 1. Create a student object with three properties: name, age, and roll no.
@@ -276,13 +300,17 @@
 //   console.log(i, arr[i]);
 // }
 
-// timming events in java script*******************************
+
+
+// *****************INTERVAL FUNCTIONS***********************
+// **********************************************************
+
+// timming events in java script***********************
 // setTimeout();
 // setInterval();
 // clearInterval();
 
-// create a countdown that starts with 10 and ends at 1 sec ****************
-// let count = 10;
+// create a countdown that starts with 10 and ends at 1 sec *
 // function timer(){
 //   console.log(count);
 //   count --;
@@ -293,7 +321,7 @@
 // }
 // let id = setInterval(timer , 1000);
 
-// copying one object to another so that it doesn't have affect on the first obj  ***************************
+// copying one object to another so that it doesn't have affect on the first obj***************************
 // var sagar = {
 //   name : "sagar",
 //   class : 10
@@ -317,15 +345,19 @@
 // }
 // setTimeout(add(2,6,8,9) , 10);
 
-// starting DOM**************************************************
+
+// *************************DOM******************************
+// **********************************************************
+
+// starting DOM**********************************************
 // var elems = document.getElementById('head');
 // elems.style.backgroundColor = "red";
 // var elem2 = document.querySelector(".para");
 // elem2[0].innerText = "i am changed para";
 // elem2[1].style.color = "green";
 
-// starting with event listener************************************
-// some of the mouse events************************************
+// starting with event listener*******************************
+// some of the mouse events***********************************
 //  var target_button = document.querySelector('.btn');
 //  target_button.style.height = "50px";
 //  target_button.style.width = "100px";
@@ -336,7 +368,7 @@
 //     document.write("hey y u have clicked 2 times");
 //  });
 
-// some of the keyboard events ******************************
+// some of the keyboard events *******************************
 //    var box = document.getElementById("input-box");
 //    box.addEventListener("keypress", function(){
 // "use strict";
@@ -349,7 +381,7 @@
 //     console.log("key up");
 //    });
 
-// event propagation *********************************************
+// event propagation *****************************************
 // when we have the dom hierarchy then this works
 // var outerdiv = document.querySelector(".outer");
 // var innerdiv = document.querySelector(".inner");
@@ -361,7 +393,7 @@
 //     alert"u just clicked the outer div");
 // });
 
-/*closures in js enbles us the access to use the varible outside the scope even if the execution of the outer context is done 
+/*NOTE:-------closures in js enbles us the access to use the varible outside the scope even if the execution of the outer context is done 
  i.e the variable doesn't get destroyed after the exection of the outer context , it get stored for the inner context use */
 
 // var i = 0;
@@ -458,8 +490,14 @@
 // increment();
 // increment();
 
-// getting stated with the higher order function***************************************
-// we will see the behaviour of the parameters whenn they are passed *****
+// ***********HIGHER ORDER FUNCTION**************************
+// **********************************************************
+
+//  NOTE:-----function which return function or takes functions
+//  as the  arguments are known as the HigherOrder functions.
+
+// getting stated with the higher order function**************************
+// we will see the behaviour of the parameters when they are passed ******
 // const flight = "LH1234";
 // const sagar = {
 //   name: "saurabh",
@@ -488,8 +526,8 @@
 // manipulate(sagar);
 // console.log(sagar);
 
-// here in objects if we try to chnage values using parametres then those changes will automatically
-// reflect to the actual values of the objects becoz both the values are pointing towards the reference of the same locataion so changes done will directly affect the changes at the actaul location.but this is not the case with the variables becoz they are stored in the heap memory..
+//NOTE:----- here in objects if we try to change values using parametres then those changes will automatically  reflect to the  actual values
+// of the objects becoz both the values are pointing towards the reference of the same locataion so changes done will directly affect the changes at the actaul location.but this is not the case with the variables becoz they are stored in the heap memory..
 
 // default parameters in function***
 // const detailArray = [];
@@ -504,7 +542,8 @@
 //  booking('LH200', undefined,500);
 //  console.log(detailArray);
 
-// function which return function or takes functions as the  arguments are known as the HigherOrder function*****************
+// demonstration of higher order function****
+
 // function1
 // const uppercase = function(str){
 
@@ -546,7 +585,8 @@
 //   const store = greet('hey');
 // store('sagar');
 
-// call apply and bind methods *******************************
+// CALL APPLY and BIND methods*****************************
+
 // let details = {
 //   name: "sagar",
 //   age: 22,
@@ -565,14 +605,14 @@
 //   age: 23,
 //   designation: "student",
 // };
-// // call :suppose if we want to call a function that is not present in our object but we gonna point to our object
+// // NOTE:---call :suppose if we want to call a function that is not present in our object but we gonna point to our object.
 // // details.print.call(details2);
 // // fun.call(details2,"india");
 
-// // apply :- it is similar to the call method the only difference is that we can pass the parameters putting them in a array list
+// //NOTE:---apply:-it is similar to the call method the only difference is that we can pass the parameters putting them in a array list.
 // fun.apply(details2,["karnataka","india"]);
 
-// // bind:- it allows the user to store the function call as a  value in  a variable and return when called that variable 
+// //NOTE:---bind:- it allows the user to store the function call as a  value in  a variable and return when called that variable.
 
 // let store = fun.bind(details2,"karnataka","india"); 
 // console.log(store);
