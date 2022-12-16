@@ -225,12 +225,39 @@
 // },array[0]);
 // console.log(store);
 
+// 5.FIND--it itrate over the array implimenting a given condition and returns the very
+// first element of the array which satisfy the given condition.
+//  let array = [ -60, 70, -20, 10, 40, -90 ];
+//  let store = array.find(function(item){
+//     return item > 0;
+//  }) 
+//  console.log(store);
+
+// 6.SOME--IT itrates over the array and check for a given condition that if any of the element 
+// statisfy that condition or not and returns a boolean value.
+// let array = [ -60, 70, -20, 10, 40, -90 ];
+// let store = array.some(function(item){
+//     return item >0;
+// }) 
+// console.log(store);
+
+// 7.EVERY-- unlike some it checks the given condition on each and every elements of the array 
+// then returns a boolean value.
+// let array = [ -60, 70, -20, 10, 40, -90 ];
+// let store = array.every(function(item){
+//     return item > 0;
+// })
+// console.log(store);
 
 
 
 
 
-// Implement a function “duplicate” to duplicate an array, as shown below:
+
+
+
+
+// Question --->Implement a function “duplicate” to duplicate an array, as shown below:
 
 // For input arr=[1,2] duplicate(arr) should return [1,2,1,2]
 
