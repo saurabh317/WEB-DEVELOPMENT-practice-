@@ -175,26 +175,59 @@
 // movements.forEach(print);
 
 // **************ARRAY FUNCTIONS*****************
+/////////////////////////////////////////////////
+// **********************************************
 
-// 1.EVERY--------------
-// array = [ 60, 70, 20, 10, 40, 90 ];
+// 1.EVERY-------------
+// let array = [ 60, 70, 20, 10, 40, 90 ];
 // const test = function(x) {
 //     return x > 5;
 // }
-// if(!array.every(test)) {
+// if(array.every(test)) {
 //     console.log("statement 1");
 // }
 // else {
 //     console.log("statement 2");
 // }
 
-// 2.MAP----------------
+// 2.MAP--itrate over array and impliment a particular method to all elements of the array. 
 // let array = [ 60, 70, 20, 10, 40, 90 ];
 // const store = array.map((item)=>{
 //   return item * 10;
 // })
 // console.log(store);
 // console.log(array);
+
+// 3.FILTER--itrate over array and check fopr a particular condition on each of the elements 
+// and return the elemets that passes that condition.
+// let array = [ -60, 70, -20, 10, 40, -90 ];
+// let store = array.filter(function(item){
+//     return item > 0;
+// });
+// console.log(store);
+
+// 4.REDUCE--it itrate in the array and keep adding the elemets of the array and returns a single value at the end.
+// acc = accumulator whose initial value we have given as a parameter to the reduce method i.e 0.
+// let array = [ -60, 70, -20, 10, 40, -90 ];
+// let store = array.reduce(function(acc,curr,i,array){
+//     return acc + curr;
+// },0);
+// console.log(store);
+
+// ******NOTE:- its not that we can only add or multiply Elements of the array to return to a single value 
+// we can do any operations which will led to return a single value.*************
+// let array = [ -60, 70, -20, 10, 40, -90 ];
+// let store = array.reduce(function(acc,curr,i){
+//     if(acc > curr){
+//         return acc;
+//     }
+//     return curr;
+// },array[0]);
+// console.log(store);
+
+
+
+
 
 
 // Implement a function “duplicate” to duplicate an array, as shown below:
