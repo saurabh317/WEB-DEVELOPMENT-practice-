@@ -249,6 +249,58 @@
 // })
 // console.log(store);
 
+// 8.FLAT-- unlike all the above functions it doesn't have a call back function, basically it flatten the 
+// array in one big array.this was introduced in Es 2019.
+// let array = [ [-60, 70], [-20], 10, 40, -90 ];
+// console.log(array.flat());
+
+// NOTE:- suppose here if we had more  nested arrays,, then simply this array method willn't work
+// for that we need to specify the argument i.e death value to this method.. 
+// let array = [ [[-60], 70], [[-20], 10], 40, -90 ];
+// console.log(array.flat(2));
+
+// 9.FLATMAP--this is the combination of flat and map together but it takes the argument as as the map--
+// const obj1 = {
+//     name : 'saurabh',
+//     creditTranscation:[200,500,800,1200],
+//     debitTranscation:[400,800,100]
+// }
+// const obj2 = {
+//     name : 'raja',
+//     creditTranscation:[500,100,800,200],
+//     debitTranscation:[40,80,10]
+// }
+// const obj3 = {
+//     name : 'aman',
+//     creditTranscation:[2000,800,800,1270],
+//     debitTranscation:[400,800,108]
+// }
+// const obj4 = {
+//     name : 'amit',
+//     creditTranscation:[206,508,800,200],
+//     debitTranscation:[4000,840,140]
+// }
+// const details = [obj1,obj2,obj3,obj4];
+
+// const DetailTranscation = details.flatMap(acc => acc.creditTranscation).reduce((acc,curr)=>acc + curr,0);
+// console.log(DetailTranscation);
+
+// 10.SORT--it itrates over the array and then sort the elements of the array,it converts all the elements in the string first--
+
+// let array = [ -60, 70, -20, 10, 40, -90 ];
+// console.log(array.sort());//this output is not sorted.
+// console.log( array.sort((a,b)=>(a-b)));
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -677,3 +729,5 @@
 // let store = fun.bind(details2,"karnataka","india"); 
 // console.log(store);
 // store();
+
+
