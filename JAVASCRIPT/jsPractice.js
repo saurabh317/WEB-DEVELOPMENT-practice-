@@ -493,7 +493,7 @@
 //     document.write("hey y u have clicked 2 times");
 //  });
 
-// some of the keyboard events *******************************
+// some of the keyboard events ***************************
 //    var box = document.getElementById("input-box");
 //    box.addEventListener("keypress", function(){
 // "use strict";
