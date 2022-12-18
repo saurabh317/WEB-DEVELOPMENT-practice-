@@ -363,6 +363,29 @@
 //   console.log(prop, student[prop]);
 // }
 
+
+// copying one object to another so that it doesn't have affect on the first obj***************************
+// var sagar = {
+//   name : "sagar",
+//   class : 10
+// };
+// var virat = Object.assign({}, sagar);
+// virat.name  = "virat";
+// console.log(virat);
+// console.log(sagar);
+//  or
+// var sagar = {
+//     name : "sagar",
+//      class : 10
+//   };
+//   var virat = {...sagar};
+//   virat.name = "virat";
+//   console.log(virat);
+//   console.log(sagar);
+
+
+
+
 // nested objects***************************
 
 // var student = {
@@ -433,29 +456,19 @@
 // }
 // let id = setInterval(timer , 1000);
 
-// copying one object to another so that it doesn't have affect on the first obj***************************
-// var sagar = {
-//   name : "sagar",
-//   class : 10
-// };
-// var virat = Object.assign({}, sagar);
-// virat.name  = "virat";
-// console.log(virat);
-// console.log(sagar);
-//  or
-// var sagar = {
-//     name : "sagar",
-//      class : 10
-//   };
-//   var virat = {...sagar};
-//   virat.name = "virat";
-//   console.log(virat);
-//   console.log(sagar);
+//--------make a clock representing  current hours,min,sec------------
+// setInterval(() => {
+//     const now = new Date();
+//     const hour =`${now.getHours()}`.padStart(2 , 0);
+//     const min =`${now.getMinutes()}`.padStart(2 , 0);
+//     const sec =`${now.getSeconds()}`.padStart(2 , 0);
+//     console.log(`${hour}:${min}:${sec}`);
+    
+// },1000);
 
-// function add(a,b,c,d) {
-//   console.log(a+b+c+d)
-// }
-// setTimeout(add(2,6,8,9) , 10);
+
+
+
 
 
 // *************************DOM******************************
