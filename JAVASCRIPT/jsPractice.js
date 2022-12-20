@@ -190,7 +190,7 @@
 //     console.log("statement 2");
 // }
 
-// 2.MAP--itrate over array and impliment a particular method to all elements of the array. 
+// 2.MAP--itrate over array and impliment a particular method to all elements of the array.
 // let array = [ 60, 70, 20, 10, 40, 90 ];
 // const store = array.map((item)=>{
 //   return item * 10;
@@ -198,7 +198,7 @@
 // console.log(store);
 // console.log(array);
 
-// 3.FILTER--itrate over array and check fopr a particular condition on each of the elements 
+// 3.FILTER--itrate over array and check fopr a particular condition on each of the elements
 // and return the elemets that passes that condition.
 // let array = [ -60, 70, -20, 10, 40, -90 ];
 // let store = array.filter(function(item){
@@ -214,7 +214,7 @@
 // },0);
 // console.log(store);
 
-// ******NOTE:- its not that we can only add or multiply Elements of the array to return to a single value 
+// ******NOTE:- its not that we can only add or multiply Elements of the array to return to a single value
 // we can do any operations which will led to return a single value.*************
 // let array = [ -60, 70, -20, 10, 40, -90 ];
 // let store = array.reduce(function(acc,curr,i){
@@ -230,18 +230,18 @@
 //  let array = [ -60, 70, -20, 10, 40, -90 ];
 //  let store = array.find(function(item){
 //     return item > 0;
-//  }) 
+//  })
 //  console.log(store);
 
-// 6.SOME--IT itrates over the array and check for a given condition that if any of the element 
+// 6.SOME--IT itrates over the array and check for a given condition that if any of the element
 // statisfy that condition or not and returns a boolean value.
 // let array = [ -60, 70, -20, 10, 40, -90 ];
 // let store = array.some(function(item){
 //     return item >0;
-// }) 
+// })
 // console.log(store);
 
-// 7.EVERY-- unlike some it checks the given condition on each and every elements of the array 
+// 7.EVERY-- unlike some it checks the given condition on each and every elements of the array
 // then returns a boolean value.
 // let array = [ -60, 70, -20, 10, 40, -90 ];
 // let store = array.every(function(item){
@@ -249,13 +249,13 @@
 // })
 // console.log(store);
 
-// 8.FLAT-- unlike all the above functions it doesn't have a call back function, basically it flatten the 
+// 8.FLAT-- unlike all the above functions it doesn't have a call back function, basically it flatten the
 // array in one big array.this was introduced in Es 2019.
 // let array = [ [-60, 70], [-20], 10, 40, -90 ];
 // console.log(array.flat());
 
 // NOTE:- suppose here if we had more  nested arrays,, then simply this array method willn't work
-// for that we need to specify the argument i.e death value to this method.. 
+// for that we need to specify the argument i.e death value to this method..
 // let array = [ [[-60], 70], [[-20], 10], 40, -90 ];
 // console.log(array.flat(2));
 
@@ -290,24 +290,6 @@
 // let array = [ -60, 70, -20, 10, 40, -90 ];
 // console.log(array.sort());//this output is not sorted.
 // console.log( array.sort((a,b)=>(a-b)));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Question --->Implement a function “duplicate” to duplicate an array, as shown below:
 
@@ -363,7 +345,6 @@
 //   console.log(prop, student[prop]);
 // }
 
-
 // copying one object to another so that it doesn't have affect on the first obj***************************
 // var sagar = {
 //   name : "sagar",
@@ -382,9 +363,6 @@
 //   virat.name = "virat";
 //   console.log(virat);
 //   console.log(sagar);
-
-
-
 
 // nested objects***************************
 
@@ -435,8 +413,6 @@
 //   console.log(i, arr[i]);
 // }
 
-
-
 // *****************INTERVAL FUNCTIONS***********************
 // **********************************************************
 
@@ -463,13 +439,8 @@
 //     const min =`${now.getMinutes()}`.padStart(2 , 0);
 //     const sec =`${now.getSeconds()}`.padStart(2 , 0);
 //     console.log(`${hour}:${min}:${sec}`);
-    
+
 // },1000);
-
-
-
-
-
 
 // *************************DOM******************************
 // **********************************************************
@@ -739,8 +710,45 @@
 
 // //NOTE:---bind:- it allows the user to store the function call as a  value in  a variable and return when called that variable.
 
-// let store = fun.bind(details2,"karnataka","india"); 
+// let store = fun.bind(details2,"karnataka","india");
 // console.log(store);
 // store();
 
+// **********************ADVANCED DOM ***********************
+// **********************************************************
 
+//inserting elements to a existing DOM--
+const bodySelect = document.body;
+const msg = document.createElement("div");
+msg.classList.add("cookie-msg");
+msg.innerHTML =
+  'we store cookies for enhancing performanc. <button  class="closeBtn">ok</button>';
+// bodySelect.append(msg);
+// bodySelect.prepend(msg);
+// bodySelect.before(msg);
+bodySelect.after(msg);
+//deleting element from the dom--
+document.querySelector('.closeBtn').addEventListener("click",()=>
+   msg.remove()
+)
+
+//styling using js--
+msg.style.backgroundColor = "red";
+// document.body.style.setProperty("backgroungColor", "red");
+// bodySelect(getComputedStyle(bodySelect).backgroundColor,"red");
+
+//attributes--
+const logo = document.querySelector('.imgg');
+console.log(logo.src);
+console.log(logo.alt);
+console.log(logo);
+logo.alt = "google";
+console.log(logo.alt);
+//here we could have also used get attributes
+console.log(logo.getAttribute('src'));//this will give the relative address
+
+//classes--
+logo.classList.add("class1",'class2');
+logo.classList.remove("clas1");
+logo.classList.toggle('class1');
+logo.classList.contains("class2");
