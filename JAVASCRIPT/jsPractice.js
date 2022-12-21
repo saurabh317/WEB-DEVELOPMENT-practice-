@@ -718,37 +718,37 @@
 // **********************************************************
 
 //inserting elements to a existing DOM--
-const bodySelect = document.body;
-const msg = document.createElement("div");
-msg.classList.add("cookie-msg");
-msg.innerHTML =
-  'we store cookies for enhancing performanc. <button  class="closeBtn">ok</button>';
+// const bodySelect = document.body;
+// const msg = document.createElement("div");
+// msg.classList.add("cookie-msg");
+// msg.innerHTML =
+//   'we store cookies for enhancing performanc. <button  class="closeBtn">ok</button>';
 // bodySelect.append(msg);
 // bodySelect.prepend(msg);
 // bodySelect.before(msg);
-bodySelect.after(msg);
-//deleting element from the dom--
-document.querySelector('.closeBtn').addEventListener("click",()=>
-   msg.remove()
-)
+// bodySelect.after(msg);
+// //deleting element from the dom--
+// document.querySelector('.closeBtn').addEventListener("click",()=>
+//    msg.remove()
+// )
 
 //styling using js--
-msg.style.backgroundColor = "red";
+// msg.style.backgroundColor = "red";
 // document.body.style.setProperty("backgroungColor", "red");
 // bodySelect(getComputedStyle(bodySelect).backgroundColor,"red");
 
 //attributes--
-const logo = document.querySelector('.imgg');
-console.log(logo.src);
-console.log(logo.alt);
-console.log(logo);
-logo.alt = "google";
-console.log(logo.alt);
+// const logo = document.querySelector('.imgg');
+// console.log(logo.src);
+// console.log(logo.alt);
+// console.log(logo);
+// logo.alt = "google";
+// console.log(logo.alt);
 //here we could have also used get attributes
-console.log(logo.getAttribute('src'));//this will give the relative address
+// console.log(logo.getAttribute('src'));//this will give the relative address
 
 //classes--
-logo.classList.add("class1",'class2');
-logo.classList.remove("clas1");
-logo.classList.toggle('class1');
-logo.classList.contains("class2");
+// logo.classList.add("class1",'class2');
+// logo.classList.remove("clas1");
+// logo.classList.toggle('class1');
+// logo.classList.contains("class2");
