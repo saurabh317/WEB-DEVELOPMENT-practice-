@@ -113,37 +113,128 @@
 // console.log(person);
 
 //using getters and setters in classes-----
-class car{
-  constructor(name,price){
-    this.name = name;
-    this.price = price;
-  }
-  print(){
-    console.log("this is "+this.name +"its price is "+this.price);
-  }
-  set name(name){
-    if(name.includes(' ')){
-      this._name =  name;//here we used _ just to remove the name conflict
-    }
-    else{
-      alert("this is not the full name of the car");
-    }
-  }
-  get name(){
-    return this._name;
-  } 
+// class car{
+//   constructor(name,price){
+//     this.name = name;
+//     this.price = price;
+//   }
+//   print(){
+//     console.log("this is "+this.name +"its price is "+this.price);
+//   }
+//   set name(name){
+//     if(name.includes(' ')){
+//       this._name =  name;//here we used _ just to remove the name conflict
+//     }
+//     else{
+//       alert("this is not the full name of the car");
+//     }
+//   }
+//   get name(){
+//     return this._name;
+//   }
 
-  //static method--
-  static sound(){
-    console.log("bummmmm");
-  }
-  
-}
-const bmw = new car("bmw",12222200);
-console.log(bmw);
-const honda = new car("honda xSeries",14570000);
-console.log(honda);
-car.sound();
+//   //static method--this is the method of the car constructure not the method of the objects of the car class.
+//   static sound(){
+//     console.log("bummmmm");
+//   }
 
+// }
+// const bmw = new car("bmw",12222200);
+// console.log(bmw);
+// const honda = new car("honda xSeries",14570000);
+// console.log(honda);
+// car.sound();
 
+//************************coding challenge*****************************
+// ********************************************************************
 
+// class car{
+
+//   constructor(name,speed){
+//     this.name = name;
+//     this.speed = speed;
+//   }
+//   brake(){
+//     this.speed = this.speed - 5;
+//     return this.speed;
+
+//   }
+//   accelerate(){
+//     this.speed = this.speed + 5;
+//     return this.speed;
+//   }
+//   get speedUS(){
+//     return this.speed/1.6;
+
+//   }
+//   set speedUS(speed){
+//     return this.speed = speed * 1.6;
+
+//   }
+// }
+// const ford = new car("ford",120);
+// console.log(ford.brake());
+// console.log(ford.brake());
+// console.log(ford.speedUS);
+// ford.speedUS = 150;
+// console.log(ford.speedUS);
+// console.log(ford);
+
+//************INHERITANCE USING THE CONSTRUCTURE FUN*******************
+// ********************************************************************
+//parent class
+// const person = function (name, age) {
+//   this.name = name;
+//   this.age = age;
+// };
+
+// person.prototype.birthYear = function () {
+//   return 2022 - this.age;
+// };
+// //child class
+// const student = function (name, age, course) {
+//   person.call(this, name, age);//first thing
+//   this.course = course;
+// };
+
+// //linking the prototype of person cnstructure to the student
+// student.prototype = Object.create(person.prototype);//second
+
+// student.prototype.introduce = function(){//so basically if we declare this function before linking then it will not work
+//     console.log(`hello i am ${this.name} and i am ${this.age} years old`);
+// }
+
+// const mike = new student("mike", 23, "cse");
+// mike.introduce();
+// console.log(mike.birthYear());
+
+//************INHERITANCE USING THE CONSTRUCTURE FUN*******************
+// ********************************************************************
+//parent class
+// class person{
+//   constructor(name,age){
+//     this.name =  name ;
+//     this.age = age;
+//   }
+//   calcBirthyear()
+//   {
+//     return 2022 - this.age;
+//   }
+// }
+// //child class
+// class student extends person{
+//   constructor(name, age, course){
+//     super(name,age);//this need to be call first
+//     this.course = course;
+//   }
+//   introduce(){
+//     console.log(`hello i am ${this.name} and i m pursuing ${this.course}`);
+//   }
+
+// }
+
+// const aman = new student('aman',19,"BCA");
+// console.log(aman.calcBirthyear());
+// console.log(aman.introduce());
+
+//incapsulation in js is done using the # symbol. 

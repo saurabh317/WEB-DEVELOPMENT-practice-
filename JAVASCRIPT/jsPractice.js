@@ -260,30 +260,30 @@
 // console.log(array.flat(2));
 
 // 9.FLATMAP--this is the combination of flat and map together but it takes the argument as as the map--
-// const obj1 = {
-//     name : 'saurabh',
-//     creditTranscation:[200,500,800,1200],
-//     debitTranscation:[400,800,100]
-// }
-// const obj2 = {
-//     name : 'raja',
-//     creditTranscation:[500,100,800,200],
-//     debitTranscation:[40,80,10]
-// }
-// const obj3 = {
-//     name : 'aman',
-//     creditTranscation:[2000,800,800,1270],
-//     debitTranscation:[400,800,108]
-// }
-// const obj4 = {
-//     name : 'amit',
-//     creditTranscation:[206,508,800,200],
-//     debitTranscation:[4000,840,140]
-// }
-// const details = [obj1,obj2,obj3,obj4];
+const obj1 = {
+    name : 'saurabh',
+    creditTranscation:[200,500,800,1200],
+    debitTranscation:[400,800,100]
+}
+const obj2 = {
+    name : 'raja',
+    creditTranscation:[500,100,800,200],
+    debitTranscation:[40,80,10]
+}
+const obj3 = {
+    name : 'aman',
+    creditTranscation:[2000,800,800,1270],
+    debitTranscation:[400,800,108]
+}
+const obj4 = {
+    name : 'amit',
+    creditTranscation:[206,508,800,200],
+    debitTranscation:[4000,840,140]
+}
+const details = [obj1,obj2,obj3,obj4];
 
-// const DetailTranscation = details.flatMap(acc => acc.creditTranscation).reduce((acc,curr)=>acc + curr,0);
-// console.log(DetailTranscation);
+const DetailTranscation = details.flatMap(acc => acc.creditTranscation)//.reduce((acc,curr)=>acc + curr,0);
+console.log(DetailTranscation);
 
 // 10.SORT--it itrates over the array and then sort the elements of the array,it converts all the elements in the string first--
 
