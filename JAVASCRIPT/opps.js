@@ -237,4 +237,40 @@
 // console.log(aman.calcBirthyear());
 // console.log(aman.introduce());
 
-//incapsulation in js is done using the # symbol. 
+//incapsulation in js is done using the # symbol.
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+//Define Student and teacher class here
+class student extends Person {
+  constructor(name, Class, rollNo) {
+    super(name);
+    this.Class = Class;
+    this.rollNo = rollNo;
+  }
+
+  getDetails() {
+    console.log(this);
+  }
+}
+class teacher extends Person {
+  constructor(name, teacherId, subject) {
+    super(name);
+    this.teacherId = teacherId;
+    this.subject = subject;
+  }
+
+  getDetails() {
+    console.log(this);
+  }
+}
+
+const obj5 = new student();
+const obj6 = new teacher();
+
+obj5.getDetails();
+obj6.getDetails();
