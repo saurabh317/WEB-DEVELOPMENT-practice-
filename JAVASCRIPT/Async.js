@@ -11,7 +11,7 @@ const btn = document.querySelector(".btn-country");
 const countriesContainer = document.querySelector(".countries");
 
 // //making our first AJAX call
-const htmlfun = function (data,className = '') {
+const htmlfun = function (data, className = "") {
   const html = ` 
 <article class="country ${className}">
 <img class="country__img" src="${data.flags.png}" />
@@ -48,7 +48,7 @@ const htmlfun = function (data,className = '') {
 //     console.log(neighbour);
 //     if(!neighbour) return;
 
-//     //second AJAX call 
+//     //second AJAX call
 //     const request2 = new XMLHttpRequest();
 //     request2.open("GET", `https://restcountries.com/v3.1/alpha/${neighbour}`);
 //     request2.send();
@@ -61,7 +61,6 @@ const htmlfun = function (data,className = '') {
 
 //   });
 
-  
 // }
 // // card("india");
 // // card("pakistan");
@@ -69,7 +68,7 @@ const htmlfun = function (data,className = '') {
 
 //above we incounter CALLBACK HELL it is the nesting of multiple callback function which led to errors in the code further
 //it also led to the inaccuracy of the code..So to solve this we have another concept PROMISES.
-//There are different states of the promises 1.)PENDING 2.)SETTELED 3.)FULFILLED / REJECTED. 
+//There are different states of the promises 1.)PENDING 2.)SETTELED 3.)FULFILLED / REJECTED.
 
 // const result = fetch(`https://restcountries.com/v3.1/name/india`);
 // console.log(result);
@@ -89,9 +88,48 @@ const htmlfun = function (data,className = '') {
 
 //***********************OR**********************
 
-const renderCountryCard = function(name){
-  const result = fetch(`https://restcountries.com/v3.1/name/${name}`)
+
+
+const renderCard = function (nameOfCountry) {
+  fetch(`https://restcountries.com/v3.1/name/${nameOfCountry}`)
   .then((response) => response.json())
-  .then((data) => htmlfun(data[0]));
+  .then((data)=>{
+    htmlfun(data[0]);
+     //second country
+    const neighbour = data[0].borders[0];
+    if(!neighbour) return;
+   return  fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`)
+  }).then((response)=> response.json())
+  .then((data)=> {
+    htmlfun(data[0],'neighbour');
+  //third country
+    const neighbour2 = data[0].borders[0];
+    console.log(neighbour2);
+    if(!neighbour2) return;
+    
+     return fetch(`https://restcountries.com/v3.1/alpha/${neighbour2}`)
+  })
+  .then((response)=> response.json())
+  .then((data)=> htmlfun(data[0] ,'neighbour2'))
+  .catch((err) => {
+    console.error(err);
+  renderError(`something went wrong ${err.message}.try again`)
+})
+
+};
+btn.addEventListener('click',function(){
+  renderCard('india');
+
+})
+
+
+
+
+const renderError = function(msg){
+  countriesContainer.insertAdjacentText('beforeend',msg);
+  countriesContainer.style.opacity = 1;
+
+
 }
-renderCountryCard('usa');
+
+
