@@ -10,7 +10,7 @@
 const btn = document.querySelector(".btn-country");
 const countriesContainer = document.querySelector(".countries");
 
-//making our first AJAX call
+// //making our first AJAX call
 const htmlfun = function (data,className = '') {
   const html = ` 
 <article class="country ${className}">
@@ -33,37 +33,65 @@ const htmlfun = function (data,className = '') {
   countriesContainer.style.opacity = 1;
 };
 
-const card = function (countryName) {
-  //first AJAX call
-  const request = new XMLHttpRequest();
-  request.open("GET", `https://restcountries.com/v3.1/name/${countryName}`);
-  request.send();
+// const card = function (countryName) {
+//   //first AJAX call
+//   const request = new XMLHttpRequest();
+//   request.open("GET", `https://restcountries.com/v3.1/name/${countryName}`);
+//   request.send();
 
-  request.addEventListener("load", function () {
-    const [data] = JSON.parse(this.responseText);
-    console.log(data);
-    htmlfun(data);
+//   request.addEventListener("load", function () {
+//     const [data] = JSON.parse(this.responseText);
+//     console.log(data);
+//     htmlfun(data);
 
-    const neighbour = data.borders[0];
-    console.log(neighbour);
-    if(!neighbour) return;
+//     const neighbour = data.borders[0];
+//     console.log(neighbour);
+//     if(!neighbour) return;
 
-    //second AJAX call 
-    const request2 = new XMLHttpRequest();
-    request2.open("GET", `https://restcountries.com/v3.1/alpha/${neighbour}`);
-    request2.send();
+//     //second AJAX call 
+//     const request2 = new XMLHttpRequest();
+//     request2.open("GET", `https://restcountries.com/v3.1/alpha/${neighbour}`);
+//     request2.send();
 
-    request2.addEventListener('load',function(){
-      const [data2]  = JSON.parse(this.responseText);
-      console.log(data2);
-      htmlfun(data2,'neighbour');
-    });
+//     request2.addEventListener('load',function(){
+//       const [data2]  = JSON.parse(this.responseText);
+//       console.log(data2);
+//       htmlfun(data2,'neighbour');
+//     });
 
-  });
+//   });
 
   
-}
-// card("india");
-// card("pakistan");
-card("usa");
+// }
+// // card("india");
+// // card("pakistan");
+// card("usa");
 
+//above we incounter CALLBACK HELL it is the nesting of multiple callback function which led to errors in the code further
+//it also led to the inaccuracy of the code..So to solve this we have another concept PROMISES.
+//There are different states of the promises 1.)PENDING 2.)SETTELED 3.)FULFILLED / REJECTED. 
+
+// const result = fetch(`https://restcountries.com/v3.1/name/india`);
+// console.log(result);
+
+//again building a card of country details using fetch API and promises.
+// const renderCountryCard = function(name){
+//  const result = fetch(`https://restcountries.com/v3.1/name/${name}`);
+//  result.then(function(response){
+//   console.log(response);
+//   return response.json();
+//  }).then(function(data){
+//   console.log(data);
+//   htmlfun(data[0]);
+//  })
+// }
+// renderCountryCard("india");
+
+//***********************OR**********************
+
+const renderCountryCard = function(name){
+  const result = fetch(`https://restcountries.com/v3.1/name/${name}`)
+  .then((response) => response.json())
+  .then((data) => htmlfun(data[0]));
+}
+renderCountryCard('usa');
