@@ -88,48 +88,74 @@ const htmlfun = function (data, className = "") {
 
 //***********************OR**********************
 
+// const renderCard = function (nameOfCountry) {
+//   fetch(`https://restcountries.com/v3.1/name/${nameOfCountry}`)
+//   .then((response) => {
 
+//   if(!response.ok){
+//     throw new Error(`country not found(${response.status})`);
+//     return response.json();
 
-const renderCard = function (nameOfCountry) {
-  fetch(`https://restcountries.com/v3.1/name/${nameOfCountry}`)
-  .then((response) => response.json())
-  .then((data)=>{
-    htmlfun(data[0]);
-     //second country
-    const neighbour = data[0].borders[0];
-    if(!neighbour) return;
-   return  fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`)
-  }).then((response)=> response.json())
-  .then((data)=> {
-    htmlfun(data[0],'neighbour');
-  //third country
-    const neighbour2 = data[0].borders[0];
-    console.log(neighbour2);
-    if(!neighbour2) return;
-    
-     return fetch(`https://restcountries.com/v3.1/alpha/${neighbour2}`)
-  })
-  .then((response)=> response.json())
-  .then((data)=> htmlfun(data[0] ,'neighbour2'))
-  .catch((err) => {
-    console.error(err);
-  renderError(`something went wrong ${err.message}.try again`)
-})
+//   }
+//   }
+//     )
+//   .then((data)=>{
+//     htmlfun(data[0]);
+//      //second country
+//     const neighbour = data[0].borders[0];
+//     if(!neighbour) return;
+//    return  fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`)
+//   }).then((response)=> response.json())
+//   .then((data)=> {
+//     htmlfun(data[0],'neighbour');
+//   //third country
+//     const neighbour2 = data[0].borders[0];
+//     console.log(neighbour2);
+//     if(!neighbour2) return;
 
-};
-btn.addEventListener('click',function(){
-  renderCard('india');
+//      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour2}`)
+//   })
+//   .then((response)=> response.json())
+//   .then((data)=> htmlfun(data[0] ,'neighbour2'))
+//   .catch((err) => {
+//     console.error(err);
+//   renderError(`something went wrong ${err.message}.try again`)
+// })
 
-})
+// };
+// btn.addEventListener('click',function(){
+//   // renderCard('india');
+//   renderCard('dsgd');
 
+// })
 
+// const renderError = function(msg){
+//   countriesContainer.insertAdjacentText('beforeend',msg);
+//   countriesContainer.style.opacity = 1;
 
+// }
 
-const renderError = function(msg){
-  countriesContainer.insertAdjacentText('beforeend',msg);
-  countriesContainer.style.opacity = 1;
+//EVENT LOOP------
+//here in the below code the synchronous task will be done at the very start.
+//and in the asynchronous tasks as we know the promises don't go in the callback stack it direct goes to the micro tasks  which has the higest priority.
+// console.log("time start");
+// setTimeout(()=>console.log("hello i am a timer"),0);
+// Promise.resolve('Resolved promise 1').then((response)=>console.log(response));
+// console.log("time ends");
 
+//BUILDING OUR OWN PROMISE-
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log("lottery is happening");
 
-}
-
-
+  setTimeout(function () {
+    if (Math.random() >= 0.5) {
+      resolve("you win 💰");
+    } else {
+      reject("you loose your money💩");
+    }
+  }, 2000);
+});
+ 
+lotteryPromise
+  .then((res) => console.log(res))
+  .catch((err) => console.error(err));
