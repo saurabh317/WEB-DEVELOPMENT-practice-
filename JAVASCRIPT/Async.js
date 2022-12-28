@@ -144,18 +144,68 @@ const htmlfun = function (data, className = "") {
 // console.log("time ends");
 
 //BUILDING OUR OWN PROMISE-
-const lotteryPromise = new Promise(function (resolve, reject) {
-  console.log("lottery is happening");
+//resolve:- full-fill promise & reject :-not full-filled
+// const lotteryPromise = new Promise(function (resolve, reject) {
+//   console.log("lottery is happening");
 
-  setTimeout(function () {
-    if (Math.random() >= 0.5) {
-      resolve("you win 💰");
-    } else {
-      reject("you loose your money💩");
-    }
-  }, 2000);
-});
+//   setTimeout(function () {
+//     if (Math.random() >= 0.5) {
+//       resolve("you win 💰");
+//     } else {
+//       reject(new Error("you loose your money💩");
+//     }
+//   }, 2000);
+// });
  
-lotteryPromise
-  .then((res) => console.log(res))
-  .catch((err) => console.error(err));
+// lotteryPromise
+//   .then((res) => console.log(res))
+//   .catch((err) => console.error(err));
+
+//challenge  loading two images at the time interval of 2 secs..
+
+// const wait = function(seconds){
+//   return new Promise(function(resolve){
+//     setTimeout(resolve,seconds * 1000);
+//   });
+// };
+
+// const imageContainer = document.querySelector('.images');
+// const imageLoad = function(imgPath){
+//   return new Promise(function(resolve,reject){
+//     const img  = document.createElement(`img`);
+//     img.src = imgPath;
+
+//     img.addEventListener(`load`,function(){
+//       imageContainer.append(img);
+//       resolve(img);
+//     });
+
+//     img.addEventListener(`error`,function(){
+//       reject(new Error("images not found"))
+//   });
+// });
+// };
+
+// let currentImg;
+
+// imageLoad('/ASSETS/IMAGES/9054.jpg')
+// .then(img=> {
+//   currentImg = img;
+//   console.log('image 1 loaded');
+//   return wait(2);
+// }).then(() => {
+//   currentImg.style.display = `none`;
+//   return imageLoad(`/ASSETS/IMAGES/mozrila.png`);
+// })
+// .then(img =>{
+//   currentImg = img;
+//   console.log('image 2 loaded');
+//   return wait(2);
+
+// })
+// .then(()=>{
+//   currentImg.style.display = `none`;
+// })
+
+// .catch(err => console.log('image not found'))
+ 
