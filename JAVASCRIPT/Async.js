@@ -10,12 +10,12 @@
 const btn = document.querySelector(".btn-country");
 const countriesContainer = document.querySelector(".countries");
 
-// //making our first AJAX call
+// // //making our first AJAX call
 const htmlfun = function (data, className = "") {
-  const html = ` 
+  const html = `
 <article class="country ${className}">
 <img class="country__img" src="${data.flags.png}" />
-<div class="country__data"> 
+<div class="country__data">
   <h3 class="country__name">${data.name.common}</h3>
   <h4 class="country__region">${data.region}</h4>
   <p class="country__row"><span>👫</span>${(+data.population / 1000000).toFixed(
@@ -156,56 +156,99 @@ const htmlfun = function (data, className = "") {
 //     }
 //   }, 2000);
 // });
- 
+
 // lotteryPromise
 //   .then((res) => console.log(res))
 //   .catch((err) => console.error(err));
 
 //challenge  loading two images at the time interval of 2 secs..
 
-// const wait = function(seconds){
-//   return new Promise(function(resolve){
-//     setTimeout(resolve,seconds * 1000);
+// const wait = function (seconds) {
+//   return new Promise(function (resolve) {
+//     setTimeout(resolve, seconds * 1000);
 //   });
 // };
 
-// const imageContainer = document.querySelector('.images');
-// const imageLoad = function(imgPath){
-//   return new Promise(function(resolve,reject){
-//     const img  = document.createElement(`img`);
+// const imageContainer = document.querySelector(".images");
+// const imageLoad = function (imgPath) {
+//   return new Promise(function (resolve, reject) {
+//     const img = document.createElement(`img`);
 //     img.src = imgPath;
-
-//     img.addEventListener(`load`,function(){
+//     img.addEventListener(`load`, function () {
 //       imageContainer.append(img);
 //       resolve(img);
 //     });
-
-//     img.addEventListener(`error`,function(){
-//       reject(new Error("images not found"))
+//     img.addEventListener(`error`, function () {
+//       reject(new Error("images not found"));
+//     });
 //   });
-// });
 // };
 
 // let currentImg;
 
-// imageLoad('/ASSETS/IMAGES/9054.jpg')
-// .then(img=> {
-//   currentImg = img;
-//   console.log('image 1 loaded');
-//   return wait(2);
-// }).then(() => {
-//   currentImg.style.display = `none`;
-//   return imageLoad(`/ASSETS/IMAGES/mozrila.png`);
-// })
-// .then(img =>{
-//   currentImg = img;
-//   console.log('image 2 loaded');
-//   return wait(2);
+// imageLoad("/ASSETS/IMAGES/9054.jpg")
+//   .then((img) => {
+//     currentImg = img;
+//     console.log("image 1 loaded");
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = `none`;
+//     return imageLoad(`/ASSETS/IMAGES/mozrila.png`);
+//   })
+//   .then((img) => {
+//     currentImg = img;
+//     console.log("image 2 loaded");
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = `none`;
+//   })
 
-// })
-// .then(()=>{
-//   currentImg.style.display = `none`;
-// })
+//   .catch((err) => console.log("image not found"));
 
-// .catch(err => console.log('image not found'))
- 
+//consuming promise using ASYNC AWAIT----async and await is just a suger coating on the then method.
+//in previous aproach we were returning the response and then consuming that promise with THEN method.
+
+// const whereAmI = async function (country) {
+//   const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+//   const data = await res.json();
+//   console.log(data);
+//   htmlfun(data[0]);
+//   //----Rendering the second country----
+//   const neighbour = data[0].borders[0];
+//   if (!neighbour) return;
+//   console.log(neighbour);
+//   const res2 = await fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+//   const data2 = await res2.json();
+//   console.log(data2);
+//   htmlfun(data2[0], "neighbour");
+// };
+// whereAmI("india");
+
+//error handling with ASYNC AND AWAIT
+//try and catch is used for handling the errors
+
+const whereAmI = async function (country) {
+  try {
+    const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+    if (!res.ok) throw new Error("problem in getting data");
+    const data = await res.json();
+    console.log(data);
+    htmlfun(data[0]);
+    //----Rendering the second country----
+    const neighbour = data[0].borders[0];
+    if (!neighbour) return;
+    console.log(neighbour);
+    const res2 = await fetch(
+      `https://restcountries.com/v3.1/alpha/${neighbour}`
+    );
+    if (!res2.ok) throw new Error("problem in getting neighbour country");
+    const data2 =  await res2.json();
+    console.log(data2);
+    htmlfun(data2[0], "neighbour");
+  } catch (err) {
+    console.error(`${err}`);
+  }
+};
+whereAmI("india");
