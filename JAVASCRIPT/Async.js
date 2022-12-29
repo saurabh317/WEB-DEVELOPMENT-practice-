@@ -1,11 +1,11 @@
 "use strict";
-//synchronous: It is the property of the js that allows the line-by-line execution of the code .
+// //synchronous: It is the property of the js that allows the line-by-line execution of the code .
 
-//Asynchronous:But there was an issue and that is suppose if we had a setInterval function or
-//any timeout function then our entire code after that function will not be executed until that
-// particular timeout function executed......
-//Then there comes an most important feature of js i.e its Asynchronous nature.It emplies that
-//if there is any such task that will stop the execution then that particular task will be done in the background ..
+//// Asynchronous:But there was an issue and that is suppose if we had a setInterval function or
+// //any timeout function then our entire code after that function will not be executed until that
+// // particular timeout function executed......
+// //Then there comes an most important feature of js i.e its Asynchronous nature.It emplies that
+// // if there is any such task that will stop the execution then that particular task will be done in the background ..
 
 const btn = document.querySelector(".btn-country");
 const countriesContainer = document.querySelector(".countries");
@@ -66,14 +66,14 @@ const htmlfun = function (data, className = "") {
 // // card("pakistan");
 // card("usa");
 
-//above we incounter CALLBACK HELL it is the nesting of multiple callback function which led to errors in the code further
-//it also led to the inaccuracy of the code..So to solve this we have another concept PROMISES.
-//There are different states of the promises 1.)PENDING 2.)SETTELED 3.)FULFILLED / REJECTED.
+// //above we incounter CALLBACK HELL it is the nesting of multiple callback function which led to errors in the code further
+// //it also led to the inaccuracy of the code..So to solve this we have another concept PROMISES.
+// //There are different states of the promises 1.)PENDING 2.)SETTELED 3.)FULFILLED / REJECTED.
 
 // const result = fetch(`https://restcountries.com/v3.1/name/india`);
 // console.log(result);
 
-//again building a card of country details using fetch API and promises.
+// //again building a card of country details using fetch API and promises.
 // const renderCountryCard = function(name){
 //  const result = fetch(`https://restcountries.com/v3.1/name/${name}`);
 //  result.then(function(response){
@@ -86,7 +86,7 @@ const htmlfun = function (data, className = "") {
 // }
 // renderCountryCard("india");
 
-//***********************OR**********************
+////***********************OR**********************
 
 // const renderCard = function (nameOfCountry) {
 //   fetch(`https://restcountries.com/v3.1/name/${nameOfCountry}`)
@@ -135,16 +135,16 @@ const htmlfun = function (data, className = "") {
 
 // }
 
-//EVENT LOOP------
-//here in the below code the synchronous task will be done at the very start.
+// //EVENT LOOP------
+// /here in the below code the synchronous task will be done at the very start.
 //and in the asynchronous tasks as we know the promises don't go in the callback stack it direct goes to the micro tasks  which has the higest priority.
 // console.log("time start");
 // setTimeout(()=>console.log("hello i am a timer"),0);
 // Promise.resolve('Resolved promise 1').then((response)=>console.log(response));
 // console.log("time ends");
 
-//BUILDING OUR OWN PROMISE-
-//resolve:- full-fill promise & reject :-not full-filled
+// //BUILDING OUR OWN PROMISE-
+// //resolve:- full-fill promise & reject :-not full-filled
 // const lotteryPromise = new Promise(function (resolve, reject) {
 //   console.log("lottery is happening");
 
@@ -161,7 +161,7 @@ const htmlfun = function (data, className = "") {
 //   .then((res) => console.log(res))
 //   .catch((err) => console.error(err));
 
-//challenge  loading two images at the time interval of 2 secs..
+// //challenge  loading two images at the time interval of 2 secs..
 
 // const wait = function (seconds) {
 //   return new Promise(function (resolve) {
@@ -207,8 +207,8 @@ const htmlfun = function (data, className = "") {
 
 //   .catch((err) => console.log("image not found"));
 
-//consuming promise using ASYNC AWAIT----async and await is just a suger coating on the then method.
-//in previous aproach we were returning the response and then consuming that promise with THEN method.
+// //consuming promise using ASYNC AWAIT----async and await is just a suger coating on the then method.
+// //in previous aproach we were returning the response and then consuming that promise with THEN method.
 
 // const whereAmI = async function (country) {
 //   const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
@@ -226,29 +226,74 @@ const htmlfun = function (data, className = "") {
 // };
 // whereAmI("india");
 
-//error handling with ASYNC AND AWAIT
-//try and catch is used for handling the errors
+// // error handling with ASYNC AND AWAIT
+// // try and catch is used for handling the errors
 
-const whereAmI = async function (country) {
-  try {
-    const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
-    if (!res.ok) throw new Error("problem in getting data");
-    const data = await res.json();
-    console.log(data);
-    htmlfun(data[0]);
-    //----Rendering the second country----
-    const neighbour = data[0].borders[0];
-    if (!neighbour) return;
-    console.log(neighbour);
-    const res2 = await fetch(
-      `https://restcountries.com/v3.1/alpha/${neighbour}`
-    );
-    if (!res2.ok) throw new Error("problem in getting neighbour country");
-    const data2 =  await res2.json();
-    console.log(data2);
-    htmlfun(data2[0], "neighbour");
-  } catch (err) {
-    console.error(`${err}`);
-  }
+// const whereAmI = async function (country) {
+//   try {
+//     const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+//     if (!res.ok) throw new Error("problem in getting data");
+//     const data = await res.json();
+//     console.log(data);
+//     htmlfun(data[0]);
+//     //----Rendering the second country----
+//     const neighbour = data[0].borders[0];
+//     if (!neighbour) return;
+//     console.log(neighbour);
+//     const res2 = await fetch(
+//       `https://restcountries.com/v3.1/alpha/${neighbour}`
+//     );
+//     if (!res2.ok) throw new Error("problem in getting neighbour country");
+//     const data2 = await res2.json();
+//     console.log(data2);
+//     htmlfun(data2[0], "neighbour");
+//   } catch (err) {
+//     console.error(`${err}`);
+//   }
+// };
+// whereAmI("india");
+
+// //running Promises in parallel tp each other-----it is done with the hepl of  promise.all function
+// //it takes all the promises ro be run parallel as an array element and returns a promise .
+const getData = async function (url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error("problem in getting data");
+  const data = await res.json();
+  return data;
+  // console.log(data);
 };
-whereAmI("india");
+// const get3Countries = async function (c1, c2, c3) {
+//   try {
+//     // const [data1] = await getData(`https://restcountries.com/v3.1/name/${c1}`);
+//     // const [data2] = await getData(`https://restcountries.com/v3.1/name/${c2}`);
+//     // const [data3] = await getData(`https://restcountries.com/v3.1/name/${c3}`);
+//     const data = await Promise.all([
+//       getData(`https://restcountries.com/v3.1/name/${c1}`),
+//       getData(`https://restcountries.com/v3.1/name/${c2}`),
+//       getData(`https://restcountries.com/v3.1/name/${c3}`),
+//     ]);
+//     // console.log([data1.capital, data2.capital, data3.capital]);
+//     console.log(data.flatMap((d) => d[0].capital));
+//   } catch (err) {
+//     console.error(`error 💥💥 +${err}`);
+//   }
+// };
+
+// get3Countries("india", "portugal", "usa");
+
+// // creating a timeout using  PROMISE.RACE---
+
+// const timeOut = async function (sec) {
+//   await new Promise(function (_, reject) {
+//     setTimeout(function () {
+//       reject(new Error("Request time out"));
+//     }, sec * 1000);
+//   });
+// };
+
+// Promise.race([
+//   getData(`https://restcountries.com/v3.1/name/india`),
+//   timeOut(0.01),
+// ])
+//   .then((res) => console.log(res[0]))
+//   .catch(err => console.log(err));
