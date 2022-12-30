@@ -297,3 +297,56 @@ const getData = async function (url) {
 // ])
 //   .then((res) => console.log(res[0]))
 //   .catch(err => console.log(err));
+
+
+
+
+
+
+
+
+
+
+
+// // write a promise to load a script into ur html using async and await------- 
+
+// async function loadScript(url) {
+//   try {
+//     // Use the `await` keyword to wait for the script to finish loading
+//     await new Promise((resolve, reject) => {
+//       const script = document.createElement('script');
+//       script.src = url;
+//       script.onload = resolve();
+//       script.onerror = reject();
+//       document.head.appendChild(script);
+//     });
+//     // The script has now finished loading
+//     console.log('Script loaded successfully');
+//   } catch (error) {
+//     // An error occurred while loading the script
+//     console.error('Error loading script:', error);
+//   }
+// }
+// // Call the `loadScript` function to start loading the script
+// loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js');
+
+// // write a promise to load a script into ur html using then method--------------- 
+
+// function fun (url) {
+//   return new Promise(function (resolve, reject) {
+//     const script = document.createElement(`script`);
+//     script.src = url;
+//     document.head.appendChild(script);
+//     script.onload = resolve(script);
+//     script.onerror = reject(new Error("something went wrong"));
+//   })
+// };
+
+// fun(url =
+//   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+// );
+
+// const promise = fun(url);
+
+// promise.then((script)=>console.log("loaded sucessfully" + script))
+// .catch((err) => console.error(err.message));
